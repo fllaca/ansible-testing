@@ -1,0 +1,20 @@
+version: '2.1'
+
+services:
+  instance:
+    image: chrismeyers/centos7
+    privileged: true
+    healthcheck:
+        test: ["CMD", "ssh-keyscan", "localhost" ]
+        interval: 4s
+        timeout: 30s
+        retries: 2
+
+  ansible-tester:
+    image: fllaca/ansible-tester
+    volumes:
+    - "$PWD:/$ROLE_NAME"
+    command: 'true'
+    depends_on:
+       instance:
+         condition: service_healthy

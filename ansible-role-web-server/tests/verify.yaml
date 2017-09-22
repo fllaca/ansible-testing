@@ -1,0 +1,18 @@
+- name: Verify - Perform checks
+  hosts: localhost
+  connection: local
+
+  tasks:
+    - name: check port 80 is listening
+      wait_for:
+        host: "{{ item }}"
+        port: 80
+        timeout: 10
+        connect_timeout: 5
+      with_items: "{{groups['test_servers']}}"
+
+    - name: check get index.html with status 200
+      uri:
+        url: "http://{{ item }}"
+        status_code: 200
+      with_items: "{{groups['test_servers']}}"

@@ -1,0 +1,2 @@
+[test_servers]
+instance ansible_ssh_pass=docker.io

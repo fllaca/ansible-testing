@@ -1,0 +1,7 @@
+- name: Converge - Run role on test instance
+  hosts: test_servers
+  become: true
+
+  roles:
+    - role: ../ansible-role-web-server
+      web_server_src: web_files
