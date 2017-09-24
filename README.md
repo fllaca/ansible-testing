@@ -79,7 +79,7 @@ We will use a Sample Ansible Role: ansible-role-httpd. It is very simple: just i
 You'll see in this repository two folders:
 
 * **ansible-role-web-server:** containes the full complete role after exercises completion. We recommend to only wath this folder to validate and compare your answers.
-* **ansible-role-web-server:** Is the same folder above, but with some empty files and sections to be completed in the next exercises.
+* **ansible-role-web-server-incomplete:** Is the same folder above, but with some empty files and sections to be completed in the next exercises.
 
 #### 0 - Preparation
 
