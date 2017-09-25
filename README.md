@@ -101,7 +101,7 @@ NOTE: if you don't want to install Ansible, you can use Ansible tester image lik
 docker run --rm -it \
     -v $(pwd):/ansible-role-web-server \
     --link instance \
-    -w /ansible-role-web-server
+    -w /ansible-role-web-server \
     fllaca/ansible-tester \
     ansible-playbook -i tests/inventory tests/converge.yaml
 ```
