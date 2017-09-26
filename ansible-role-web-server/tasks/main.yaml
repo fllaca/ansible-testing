@@ -1,6 +1,6 @@
 ---
 - name: install httpd
-  include: httpd.yaml
+  include: nginx.yaml
 
 - name: include files
   include: copy_files.yaml

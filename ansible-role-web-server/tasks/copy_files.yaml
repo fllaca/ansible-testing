@@ -2,4 +2,4 @@
 - name: Add web page files
   copy:
     src: "{{ web_server_src }}"
-    dest: /var/www/html
+    dest: /usr/share/nginx/html
