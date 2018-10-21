@@ -1,0 +1,25 @@
+---
+- name: Ensure Mysql User
+  user: 
+    name: mysql
+    state: present
+
+- name: Install Mysql Community repository
+  yum_repository:
+    name: mysql-community
+    description: Mysql Community repository
+    baseurl: "http://repo.mysql.com/yum/mysql-{{ mysql_version }}-community/el/7/$basearch/"
+    gpgcheck: no
+
+- name: Ensure MySql package
+  package: 
+    name: mysql-server
+    state: present
+    update_cache: yes
+
+- name: Restart mysql Service
+  service:
+    name: mysqld
+    state: restarted
+    daemon_reload: yes
+    enabled: yes
