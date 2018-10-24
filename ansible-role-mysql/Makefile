@@ -1,7 +1,3 @@
-
-
-ANSIBLE_HOST_KEY_CHECKING:=False
-
 create:
 	docker-compose -f tests/docker-compose.yaml up -d
 
