@@ -1,1 +1,2 @@
 ansible-role-web-server/tests/*.retry
+ansible-role-mysql/tests/*.retry
